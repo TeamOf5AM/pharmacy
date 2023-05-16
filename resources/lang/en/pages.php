@@ -484,4 +484,13 @@
   'Ayaan Tech Limited ' => 'Ayaan Tech Limited ',
   ' It is built to manage overall pharmacy business activities including medicine management,purchase management,supplier and manufacturers management.' => ' It is built to manage overall pharmacy business activities including medicine management purchase management supplier and manufacturers management.',
   'Config. Mail ' => 'Config. Mail ',
+  'Please sign-in to your account and manage your
+                                    pharmacy.' => 'Please sign-in to your account and manage your
+                                    pharmacy.',
+  'Remember
+                                                Me' => 'Remember
+                                                Me',
+  'Remember
+                                                    Me' => 'Remember
+                                                    Me',
 );
