@@ -46,6 +46,9 @@
         .dark-layout h2{
             color: #fff!important;
         }
+        .dark-layout body{
+            background: linear-gradient(90deg, #C7C5F4, #776BCC) !important;
+        }
         .dark-layout label{
             color: #fff!important;
         }
@@ -86,16 +89,82 @@
                     <div class="auth-inner row m-0">
                         <!-- Brand logo--><a class="brand-logo">
                           <img src="{{asset('dashboard/app-assets/images/logo112.png') }}" height="24" width="24">
-                            <h2 class="brand-text ms-1 text-uppercase" style="color:#ffffff;">{{ config('app.name', 'ATL Pharma') }}</h2>
+                            <h2 class="brand-text ms-1 text-uppercase" style="color:#ffffff;">{{ config('app.name', 'P-Soft') }}</h2>
                         </a>
                         <!-- /Brand logo-->
                         <!-- Left Text-->
                         <div class="d-none d-lg-flex col-lg-8 align-items-center p-5"  style="background:#161D31">
-                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{{ asset('dashboard/app-assets/images/pages/login-v2-dark.svg') }}" alt="{{ config('app.name', 'ATL Pharma') }}" /></div>
+                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{{ asset('dashboard/app-assets/images/pages/login-v2-dark.svg') }}" alt="{{ config('app.name', 'P-Soft') }}" /></div>
                         </div>
                         <!-- /Left Text-->
                         <!-- Login-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5 ">
+                            <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+                                <h2 class="card-title fw-bold mb-1 text-uppercase">Welcome to Pharmacy Software Solution.</h2>
+                                <p class="card-text mb-2 ">{{ translate('Please sign-in to your account and manage your pharmacy.') }}</p>
+                                <form class="auth-login-form mt-2" action="{{ route('login') }}" method="POST">
+                                    @csrf
+                                    <div class="mb-1">
+                                        <label class="form-label" for="login-email">{{ __('pages.email') }} </label>
+                                        <input class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Enter your email" value="{{ old('email') }}"  required autocomplete="email" id="email" autofocus/>
+                                        @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                    </div>
+                                    <div class="mb-1">
+                                        <div class="d-flex justify-content-between">
+                                            <label class="form-label" for="login-password">{{ __('pages.password') }}</label>
+                                        </div>
+                                        <div class="input-group input-group-merge form-password-toggle">
+                                            <input class="form-control form-control-merge  @error('password') is-invalid @enderror" id="password" placeholder="Enter your password" name="password" required autocomplete="current-password" type="password"/><span class="input-group-text cursor-pointer"><i class="fas fa-eye" data-feather="eye"></i></span>
+                                            
+                                            @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="remember" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}/>
+                                            <label class="form-check-label" for="remember-me"> {{ translate('Remember Me') }} </label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-dark w-100 text-black" tabindex="4">{{ translate('Sign in') }}</button>
+                                    
+                                </form>
+                              
+                               
+                            </div>
+                        </div>
+                        <!-- /Login-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <div class="auth-wrapper auth-cover">
+                    <div class="auth-inner row m-0">
+                        <!-- Login-->
+                        <div class="d-flex col-lg-4 mx-auto align-items-center auth-bg px-2 p-lg-5 ">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                                 <h2 class="card-title fw-bold mb-1 text-uppercase">Welcome to Pharmacy Software Solution.</h2>
                                 <p class="card-text mb-2 ">{{ translate('Please sign-in to your account and manage your pharmacy.') }}</p>
