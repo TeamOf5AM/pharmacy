@@ -10,6 +10,12 @@
 <?php $__env->startSection('title', __('pages.dashboard')); ?>
 <?php $__env->startSection('content'); ?>
 
+<style>
+  .rounded-circle{
+    width: 200px;
+    height: 200px;
+  }
+</style>
             
          <div class="container-fluid mb-5 plm">
             <div class="row mt-3 statrow">   
@@ -38,65 +44,65 @@
         
         <?php if(Auth::user()->shop->email != env('SUPERUSER')): ?>
         <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
-                <div class="smalll-box d-flex justify-content-between">
-                    <div class="inner">
+            <div class="small-box mx-auto card rounded-circle bg-info">
+                <div class="smalll-box d-flex justify-content-center">
+                    <div class="inner text-center">
                         <h3><?php echo e(number_format($medicine,0,".",",")); ?></h3>
                         <p><?php echo e(__('Stock Medicine')); ?></p>
                     </div>
-                    <div class="icon">
+                    <!-- <div class="icon">
                         <i class="fas fa-pills fa-2xl"></i>
-                    </div>
+                    </div> -->
                 </div>
-                <a href="<?php echo e(route('instock')); ?>" class="small-box-footer">
+                <a href="<?php echo e(route('instock')); ?>" class="small-box-footer bg-transparent">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
-                <div class="smalll-box d-flex justify-content-between">
-                    <div class="inner">
+            <div class="small-box mx-auto rounded-circle bg-success">
+                <div class="smalll-box d-flex justify-content-center">
+                    <div class="inner text-center">
                         <h3><?php echo e(number_format($customer,2,".",",")); ?></h3>
                         <p><?php echo e(__('Total Sales')); ?></p>
                     </div>
-                    <div class="icon">
+                    <!-- <div class="icon">
                         <i class="fas fa-usd fa-2xl"></i>
-                    </div>
+                    </div> -->
                 </div>
-                <a href="<?php echo e(route('invoice.reports')); ?>" class="small-box-footer">
+                <a href="<?php echo e(route('invoice.reports')); ?>" class="small-box-footer bg-transparent">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-6">
-            <div class="small-box bg-warning">
-                <div class="smalll-box d-flex justify-content-between">
-                    <div class="inner">
+            <div class="small-box mx-auto rounded-circle bg-warning">
+                <div class="smalll-box d-flex justify-content-center">
+                    <div class="inner text-center">
                         <h3><?php echo e($expire->count()); ?></h3>
                         <p><?php echo e(__('pages.expired_medicine')); ?></p>
                     </div>
-                    <div class="icon">
+                    <!-- <div class="icon">
                         <i class="fas fa-hourglass-end fa-2xl"></i>
-                    </div>
+                    </div> -->
                 </div>
-                <a href="<?php echo e(route('expired')); ?>" class="small-box-footer">
+                <a href="<?php echo e(route('expired')); ?>" class="small-box-footer bg-transparent">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-6">
-            <div class="small-box bg-danger">
-                <div class="smalll-box d-flex justify-content-between">
-                    <div class="inner">
+            <div class="small-box mx-auto rounded-circle bg-danger">
+                <div class="smalll-box d-flex justify-content-center">
+                    <div class="inner text-center">
                         <h3><?php echo e($stockout->count()); ?></h3>
                         <p><?php echo e(__('pages.stock_out_medicine')); ?></p>
                     </div>
-                    <div class="icon">
+                    <!-- <div class="icon">
                         <i class="fa-brands fa-product-hunt fa-2xl"></i>
-                    </div>
+                    </div> -->
                 </div>
-                <a href="<?php echo e(route('stockout')); ?>" class="small-box-footer">
+                <a href="<?php echo e(route('stockout')); ?>" class="small-box-footer bg-transparent">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
