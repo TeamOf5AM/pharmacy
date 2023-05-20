@@ -298,7 +298,23 @@
             </span>
         </a>
         <ul class="menu-content">
-            <li class="{{ active_if_full_match('doctor/add') }}">
+            <li class="{{ active_if_full_match('memeber/add') }}">
+                <a class="d-flex align-items-center" href="{{ route('member.add') }}">
+                    <i data-feather="circle"></i>
+                    <span class="menu-item text-truncate" data-i18n="List">
+                        {{ __('Add Member') }}
+                    </span>
+                </a>
+            </li>
+            <li class="{{ active_if_full_match('dependentMember/add') }}">
+                <a class="d-flex align-items-center" href="{{ route('dependentMember.add') }}">
+                    <i data-feather="circle"></i>
+                    <span class="menu-item text-truncate" data-i18n="List">
+                        {{ __('Add Dependent Member') }}
+                    </span>
+                </a>
+            </li>
+            <li class="{{ active_if_full_match('dependentMember/add') }}">
                 <a class="d-flex align-items-center" href="{{ route('doctor.add') }}">
                     <i data-feather="circle"></i>
                     <span class="menu-item text-truncate" data-i18n="List">

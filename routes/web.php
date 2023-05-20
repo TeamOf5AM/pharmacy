@@ -182,6 +182,23 @@ Route::group(['middleware' => ['local']], function () {
             Route::get('/doctor/reports', 'DoctorController@reports')->name('doctor.reports');
             Route::get('/doctor/due', 'DoctorController@due')->name('doctor.due');
 
+            
+            Route::get('/member/list', 'MemberController@index')->name('member.list');
+            Route::any('/member/add', 'MemberController@add')->name('member.add');
+            Route::get('/member/view/{id}', 'MemberController@view')->name('member.view');
+            Route::any('/member/edit/{id}', 'MemberController@edit')->name('member.edit');
+            Route::get('/member/delete/{id}', 'MemberController@delete')->name('member.delete');
+            Route::get('/member/reports', 'MemberController@reports')->name('member.reports');
+            Route::get('/member/due', 'MemberController@due')->name('member.due');
+
+            Route::get('/dependentMember/list', 'DependentMemberController@index')->name('dependentMember.list');
+            Route::any('/dependentMember/add', 'DependentMemberController@add')->name('dependentMember.add');
+            Route::get('/dependentMember/view/{id}', 'DependentMemberController@view')->name('dependentMember.view');
+            Route::any('/dependentMember/edit/{id}', 'DependentMemberController@edit')->name('dependentMember.edit');
+            Route::get('/dependentMember/delete/{id}', 'DependentMemberController@delete')->name('dependentMember.delete');
+            Route::get('/dependentMember/reports', 'DependentMemberController@reports')->name('dependentMember.reports');
+            Route::get('/dependentMember/due', 'DependentMemberController@due')->name('dependentMember.due');
+
 
             Route::get('/tests/list', 'TestController@index')->name('test.list');
             Route::any('/tests/add', 'TestController@add')->name('test.add');
