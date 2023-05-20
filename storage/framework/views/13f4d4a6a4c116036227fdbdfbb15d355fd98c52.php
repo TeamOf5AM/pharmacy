@@ -316,7 +316,25 @@
             </span>
         </a>
         <ul class="menu-content">
-            <li class="<?php echo e(active_if_full_match('doctor/add')); ?>">
+            <li class="<?php echo e(active_if_full_match('memeber/add')); ?>">
+                <a class="d-flex align-items-center" href="<?php echo e(route('member.add')); ?>">
+                    <i data-feather="circle"></i>
+                    <span class="menu-item text-truncate" data-i18n="List">
+                        <?php echo e(__('Add Member')); ?>
+
+                    </span>
+                </a>
+            </li>
+            <li class="<?php echo e(active_if_full_match('dependentMember/add')); ?>">
+                <a class="d-flex align-items-center" href="<?php echo e(route('dependentMember.add')); ?>">
+                    <i data-feather="circle"></i>
+                    <span class="menu-item text-truncate" data-i18n="List">
+                        <?php echo e(__('Add Dependent Member')); ?>
+
+                    </span>
+                </a>
+            </li>
+            <li class="<?php echo e(active_if_full_match('dependentMember/add')); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('doctor.add')); ?>">
                     <i data-feather="circle"></i>
                     <span class="menu-item text-truncate" data-i18n="List">

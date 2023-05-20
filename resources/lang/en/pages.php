@@ -493,4 +493,8 @@
   'Remember
                                                     Me' => 'Remember
                                                     Me',
+  'Add Member' => 'Add Member',
+  'Edit Member' => 'Edit Member',
+  'Members' => 'Members',
+  'Add Dependent Member' => 'Add Dependent Member',
 );

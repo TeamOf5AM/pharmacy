@@ -15,10 +15,10 @@
     <meta name="revisit-after" content="1 days">
     <meta name="author" content="Ayaan Tech Limited">
     <!-- Primary Meta Tags -->
-    <title>Pharmacy Software Solutions (ATL-Pharma)</title>
-    <meta name="title" content="Pharmacy Software Solutions (ATL-Pharma)">
+    <title>P Soft | Pharmacy Software</title>
+    <meta name="title" content="P Soft | Pharmacy Software">
     <meta name="description"
-          content="Pharmacy Software Solution is built to manage overall pharmacy business activities including medicine management purchase management supplier or manufacturers management stock management sales management daily or monthly accounts management. This software is easy to use and manage with easy medicine search easy invoice creation pharmacy faster daily operation and date wise details report. ">
+          content="P Soft Solution is built to manage overall pharmacy business activities including medicine management purchase management supplier or manufacturers management stock management sales management daily or monthly accounts management. This software is easy to use and manage with easy medicine search easy invoice creation pharmacy faster daily operation and date wise details report. ">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">

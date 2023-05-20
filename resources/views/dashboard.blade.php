@@ -45,7 +45,7 @@
         
         @if(Auth::user()->shop->email != env('SUPERUSER'))
         <div class="col-lg-3 col-6">
-            <div class="small-box mx-auto card rounded-circle bg-info">
+            <div class="small-box mx-auto rounded-circle bg-info">
                 <div class="smalll-box d-flex justify-content-center">
                     <div class="inner text-center">
                         <h3>{{ number_format($medicine,0,".",",")}}</h3>
