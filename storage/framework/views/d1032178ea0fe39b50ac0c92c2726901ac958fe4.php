@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', translate('Add Doctor')); ?>
+<?php $__env->startSection('title', translate('Add Member')); ?>
 <?php $__env->startSection('content'); ?>
     <section id="basic-horizontal-layouts">
         <section id="multiple-column-form">
@@ -6,7 +6,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title"><?php echo e(translate('Add Doctor')); ?></h4>
+                  <h4 class="card-title"><?php echo e(translate('Add Member')); ?></h4>
                 </div>
                 <div class="card-body">
                   <form class="form-horizontal" method="POST">
@@ -21,7 +21,7 @@
                               <label for="profile_no" class="col-sm-3 form-label">Profile No<i class="required">*</i>
                               </label>
                               <div class="col-sm-12">
-                                <input type="text" class="form-control" value="" name="profile_no" readonly>
+                                <input type="text" class="form-control" value="<?php echo $num ?? '' ; ?>" name="profile_no" readonly>
                               </div>
                             </div>
 
