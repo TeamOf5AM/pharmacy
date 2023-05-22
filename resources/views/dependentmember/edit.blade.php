@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', translate('Edit Doctor') )
+@section('title', translate('Edit Dependent Member') )
 @section('content')
     <section id="basic-horizontal-layouts">
         <section id="multiple-column-form">
@@ -7,7 +7,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">{{ translate('Edit Doctor') }}</h4>
+                  <h4 class="card-title">{{ translate('Edit Dependent Member') }}</h4>
                 </div>
                 <div class="card-body">
                   <form class="form" method="POST" action="{{route('doctor.edit', $customer->id) }}">

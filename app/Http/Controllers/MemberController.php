@@ -79,8 +79,16 @@ class MemberController extends Controller
                 return redirect()->route('member.list');
             }
         } else {
-            
-            return view('member.add');
+            $result = Member::select('profile_no')->latest()->first();
+            if($result != null)
+            {
+                $number = (int)$result['profile_no'];
+                $number++;
+            }
+            else{
+                $number = 1;
+            }
+            return view('member.add')->with('num',$number);
         }
     }
     

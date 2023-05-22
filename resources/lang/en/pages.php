@@ -497,4 +497,5 @@
   'Edit Member' => 'Edit Member',
   'Members' => 'Members',
   'Add Dependent Member' => 'Add Dependent Member',
+  'Dependent Members' => 'Dependent Members',
 );
