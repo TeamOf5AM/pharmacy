@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', translate('Dependent Members'))
+@section('title', translate('Dependent Members | List'))
 @section('custom-css')
 
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css') }}">
@@ -11,7 +11,7 @@
     <section class="app-user-list">
         <div class="card">
             <div class="card-body border-bottom">
-                <h4 class="card-title">{{ translate('Dependent Members') }}</h4>
+                <h4 class="card-title">{{ translate('Dependent Members') }} <span><a href="" class="btn btn-dark">Add Dependent</a></span></h4>
                 <div class="row">
                     <div class="col-md-4 user_role"></div>
                     <div class="col-md-4 user_plan"></div>
@@ -65,16 +65,16 @@
     var table = $('.user-list-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('doctor.list') }}",
+        ajax: "{{ route('dependentMember.list') }}",
         columns: [
           { data: 'id', name: 'id' , orderable: false, searchable: false},
             {data: 'profile_no', name: 'profile_no'},
-            {data: 'member_surname', name: 'member_surname'},
-            {data: 'member_idno', name: 'member_idno'},
-            {data: 'accountno', name: 'accountno'},
-            {data: 'home_address', name: 'home_address'},
-            {data: 'mobile_tel', name: 'mobile_tel'},
-            {data: 'email_address', name: 'phone'},
+             {data: 'member_surname', name: 'member_surname'},
+             {data: 'member_idno', name: 'member_idno'},
+             {data: 'accountno', name: 'accountno'},
+             {data: 'home_address', name: 'home_address'},
+             {data: 'mobile_tel', name: 'mobile_tel'},
+             {data: 'email_address', name: 'phone'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ],
         dom: 'Bfrtip',

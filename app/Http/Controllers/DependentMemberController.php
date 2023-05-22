@@ -72,7 +72,7 @@ class DependentMemberController extends Controller
 
             $result['options']=Member::get();
             
-            return view('dependentmember.add',$result);
+            return view('dependentMember.add',$result);
         }
     }
     
@@ -156,6 +156,7 @@ class DependentMemberController extends Controller
         
          if ($request->ajax()) {
             $data = Member::select('*')->where('shop_id', Auth::user()->shop_id)->latest();
+            dd($data);
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
@@ -164,7 +165,7 @@ class DependentMemberController extends Controller
                     ->rawColumns(['action'])
                     ->make(true);
         }
-        $customer = DependentMember::where('shop_id', Auth::user()->shop_id)->get();
+        $customer = Member::where('shop_id', Auth::user()->shop_id)->get();
         
         return view('dependentMember.list', compact('customer'));
     }
