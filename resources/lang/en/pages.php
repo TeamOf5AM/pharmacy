@@ -498,4 +498,5 @@
   'Members' => 'Members',
   'Add Dependent Member' => 'Add Dependent Member',
   'Dependent Members' => 'Dependent Members',
+  'Dependent Members | List' => 'Dependent Members | List',
 );

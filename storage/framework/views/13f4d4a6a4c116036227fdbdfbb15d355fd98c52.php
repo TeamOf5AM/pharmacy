@@ -321,15 +321,6 @@
             </span>
         </a>
         <ul class="menu-content">
-            <li class="<?php echo e(active_if_full_match('member/add')); ?>">
-                <a class="d-flex align-items-center" href="<?php echo e(route('member.add')); ?>">
-                    <i data-feather="circle"></i>
-                    <span class="menu-item text-truncate" data-i18n="List">
-                        <?php echo e(__('Add Member')); ?>
-
-                    </span>
-                </a>
-            </li>
             <li class="<?php echo e(active_if_full_match('member/list')); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('member.list')); ?>">
                     <i data-feather="circle"></i>
@@ -339,29 +330,11 @@
                     </span>
                 </a>
             </li>
-            <li class="<?php echo e(active_if_full_match('dependentMember/add')); ?>">
-                <a class="d-flex align-items-center" href="<?php echo e(route('dependentMember.add')); ?>">
-                    <i data-feather="circle"></i>
-                    <span class="menu-item text-truncate" data-i18n="List">
-                        <?php echo e(__('Add Dependent Member')); ?>
-
-                    </span>
-                </a>
-            </li>
             <li class="<?php echo e(active_if_full_match('dependentMember/list')); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('dependentMember.list')); ?>">
                     <i data-feather="circle"></i>
                     <span class="menu-item text-truncate" data-i18n="List">
                         <?php echo e(__('Dependent List')); ?>
-
-                    </span>
-                </a>
-            </li>
-            <li class="<?php echo e(active_if_full_match('doctor/add')); ?>">
-                <a class="d-flex align-items-center" href="<?php echo e(route('doctor.add')); ?>">
-                    <i data-feather="circle"></i>
-                    <span class="menu-item text-truncate" data-i18n="List">
-                        <?php echo e(__('Add Doctor')); ?>
 
                     </span>
                 </a>

@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', translate('Members')); ?>
+<?php $__env->startSection('title', translate('Dependent Members | List')); ?>
 <?php $__env->startSection('custom-css'); ?>
 
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('dashboard/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css')); ?>">
@@ -10,7 +10,7 @@
     <section class="app-user-list">
         <div class="card">
             <div class="card-body border-bottom">
-                <h4 class="card-title"><?php echo e(translate('Members')); ?></h4>
+                <h4 class="card-title"><?php echo e(translate('Dependent Members')); ?> <span class="float-end"><a href="<?php echo e(route('dependentMember.add')); ?>" class="btn btn-primary btn-sm">+ Add Dependent</a></span></h4>
                 <div class="row">
                     <div class="col-md-4 user_role"></div>
                     <div class="col-md-4 user_plan"></div>
@@ -22,13 +22,10 @@
                     <thead class="table-light">
                         <tr>
                             <th><?php echo e(__('pages.sn')); ?></th>
-                            <th><?php echo e(__('Profile No')); ?></th>
-                            <th><?php echo e(__('Member Name')); ?></th>
-                            <th><?php echo e(__('Member Id')); ?></th>
-                            <th><?php echo e(__('Account No')); ?></th>
-                            <th><?php echo e(__('Home Address')); ?></th>
-                            <th><?php echo e(__('Mobile Tel')); ?></th>
-                            <th><?php echo e(__('Email Address')); ?></th>
+                            <th><?php echo e(__('Firstname')); ?></th>
+                            <th><?php echo e(__('Surname')); ?></th>
+                            <th><?php echo e(__('Gender')); ?></th>
+                            <th><?php echo e(__('Relation')); ?></th>
                             <th><?php echo e(__('Action')); ?></th>
                         </tr>
                     </thead>
@@ -64,16 +61,13 @@
     var table = $('.user-list-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "<?php echo e(route('member.list')); ?>",
+        ajax: "<?php echo e(route('dependentMember.list')); ?>",
         columns: [
           { data: 'id', name: 'id' , orderable: false, searchable: false},
-            {data: 'profile_no', name: 'profile_no'},
-             {data: 'member_surname', name: 'member_surname'},
-             {data: 'member_idno', name: 'member_idno'},
-             {data: 'accountno', name: 'accountno'},
-             {data: 'home_address', name: 'home_address'},
-             {data: 'mobile_tel', name: 'mobile_tel'},
-             {data: 'email_address', name: 'phone'},
+            {data: 'Firstname', name: 'Firstname'},
+            {data: 'Surname', name: 'Surname'},
+            {data: 'Gender', name: 'Gender'},
+            {data: 'Relation', name: 'Relation'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ],
         dom: 'Bfrtip',

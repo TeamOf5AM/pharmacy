@@ -10,7 +10,7 @@
     <section class="app-user-list">
         <div class="card">
             <div class="card-body border-bottom">
-                <h4 class="card-title"><?php echo e(translate('Members')); ?></h4>
+                <h4 class="card-title"><?php echo e(translate('Members')); ?> <span class="float-end"><a href="<?php echo e(route('member.add')); ?>" class="btn btn-primary btn-sm">+ Add Member</a></span></h4>
                 <div class="row">
                     <div class="col-md-4 user_role"></div>
                     <div class="col-md-4 user_plan"></div>

@@ -303,14 +303,6 @@
             </span>
         </a>
         <ul class="menu-content">
-            <li class="{{ active_if_full_match('member/add') }}">
-                <a class="d-flex align-items-center" href="{{ route('member.add') }}">
-                    <i data-feather="circle"></i>
-                    <span class="menu-item text-truncate" data-i18n="List">
-                        {{ __('Add Member') }}
-                    </span>
-                </a>
-            </li>
             <li class="{{ active_if_full_match('member/list') }}">
                 <a class="d-flex align-items-center" href="{{ route('member.list') }}">
                     <i data-feather="circle"></i>
@@ -319,27 +311,11 @@
                     </span>
                 </a>
             </li>
-            <li class="{{ active_if_full_match('dependentMember/add') }}">
-                <a class="d-flex align-items-center" href="{{ route('dependentMember.add') }}">
-                    <i data-feather="circle"></i>
-                    <span class="menu-item text-truncate" data-i18n="List">
-                        {{ __('Add Dependent Member') }}
-                    </span>
-                </a>
-            </li>
             <li class="{{ active_if_full_match('dependentMember/list') }}">
                 <a class="d-flex align-items-center" href="{{ route('dependentMember.list') }}">
                     <i data-feather="circle"></i>
                     <span class="menu-item text-truncate" data-i18n="List">
                         {{ __('Dependent List') }}
-                    </span>
-                </a>
-            </li>
-            <li class="{{ active_if_full_match('doctor/add') }}">
-                <a class="d-flex align-items-center" href="{{ route('doctor.add') }}">
-                    <i data-feather="circle"></i>
-                    <span class="menu-item text-truncate" data-i18n="List">
-                        {{ __('Add Doctor') }}
                     </span>
                 </a>
             </li>
