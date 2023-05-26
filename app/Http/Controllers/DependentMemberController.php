@@ -72,7 +72,7 @@ class DependentMemberController extends Controller
 
             $result['options']=Member::get();
             
-            return view('dependentmember.add',$result);
+            return view('dependentMember.add',$result);
         }
     }
     
@@ -137,7 +137,7 @@ class DependentMemberController extends Controller
     
      public function delete(Request $request, $id)
     {
-        $customer = dependentmember::where('shop_id', Auth::user()->shop_id)->where('id', $id)->firstOrFail();
+        $customer = DependentMember::where('shop_id', Auth::user()->shop_id)->where('id', $id)->firstOrFail();
 
         if($customer->delete()){
                Toastr::success('DependentMember successfully Deleted', '', ['progressBar' => true, 'closeButton' => true, 'positionClass' => 'toast-top-right']);
@@ -155,11 +155,11 @@ class DependentMemberController extends Controller
     {
         
          if ($request->ajax()) {
-            $data = Member::select('*')->where('shop_id', Auth::user()->shop_id)->latest();
+            $data = DependentMember::select('*')->where('shop_id', Auth::user()->shop_id)->latest();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-                        return '<a href="'.route('dependentmember.edit', $row->id).'" class="badge bg-primary"><i class="fas fa-edit"></i></a><a onclick="return confirm(\'Are you sure?\')" href="'.route('dependentmember.delete', $row->id).'" class="badge bg-danger"><i class="fas fa-trash"></i></a>';
+                        return '<a href="'.route('dependentMember.edit', $row->id).'" class="badge bg-primary"><i class="fas fa-edit"></i></a><a onclick="return confirm(\'Are you sure?\')" href="'.route('dependentMember.delete', $row->id).'" class="badge bg-danger"><i class="fas fa-trash"></i></a>';
                     })
                     ->rawColumns(['action'])
                     ->make(true);

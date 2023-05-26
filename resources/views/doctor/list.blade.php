@@ -11,7 +11,7 @@
     <section class="app-user-list">
         <div class="card">
             <div class="card-body border-bottom">
-                <h4 class="card-title">{{ translate('Doctors') }}</h4>
+                <h4 class="card-title">{{ translate('Doctors') }} <span class="float-end"><a href="{{route('doctor.add')}}" class="btn btn-primary btn-sm">+ Add Doctor</a></span></h4>
                 <div class="row">
                     <div class="col-md-4 user_role"></div>
                     <div class="col-md-4 user_plan"></div>
