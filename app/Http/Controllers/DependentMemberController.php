@@ -166,6 +166,6 @@ class DependentMemberController extends Controller
         }
         $customer = DependentMember::where('shop_id', Auth::user()->shop_id)->get();
         
-        return view('dependentMember.list', compact('customer'));
+        return view('dependentmember.list', compact('customer'));
     }
 }

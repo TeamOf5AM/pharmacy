@@ -24,12 +24,12 @@
                         <tr>
                             <th>{{ __('pages.sn') }}</th>
                             <th>{{ __('Profile No') }}</th>
-                            <th>{{ __('Member Name') }}</th>
-                            <th>{{ __('Member Id') }}</th>
-                            <th>{{ __('Account No') }}</th>
-                            <th>{{ __('Home Address') }}</th>
-                            <th>{{ __('Mobile Tel') }}</th>
-                            <th>{{ __('Email Address') }}</th>
+                            <th>{{ __('Mem Name') }}</th>
+                            <th>{{ __('Mem Id') }}</th>
+                            <th>{{ __('Acc No') }}</th>
+                            <th>{{ __('Address') }}</th>
+                            <th>{{ __('Mobile') }}</th>
+                            <th>{{ __('Email') }}</th>
                             <th>{{ __('Action') }}</th>
                         </tr>
                     </thead>
@@ -38,6 +38,32 @@
         </div>
         <div class="modal modal-slide-in new-user-modal fade" id="modals-slide-in"></div>
     </section>
+
+    <!-- Modal -->
+<div class="modal fade" id="allDMembers" tabindex="-1" aria-labelledby="allDMembersLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="allDMembersLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row" id="#dMembers">
+            <div class="col-md-4">
+                <span href="" class="badge bg-primary">Member Name</span>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 @endsection
 
 @section('custom-js')
@@ -60,6 +86,18 @@
    
     <!-- END: Page Vendor JS-->
      <script>
+
+    function dMembers(id)
+    {
+        $.get("{{ route('member.getDM') }}",
+        {
+            depmem_id: id
+        },
+        function(data, status){
+            console.log("Data: " + data + "\nStatus: " + status);
+        });
+    }
+
          $(function () {
     
     var table = $('.user-list-table').DataTable({

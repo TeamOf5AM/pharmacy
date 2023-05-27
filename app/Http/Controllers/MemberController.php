@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Member;
+use App\Models\DependentMember;
 use Brian2694\Toastr\Facades\Toastr;
 use Yajra\DataTables\DataTables;
 
@@ -167,15 +168,22 @@ class MemberController extends Controller
     
     
      
+    public function getDependentMembers(Request $request)
+    {
+        $input = $request->all();
+        $customer = DependentMember::where('Profile_No',$input['depmem_id'])->get();
+        return $customer;
+
+    }
+
     public function index(Request $request)
     {
-        
-         if ($request->ajax()) {
+        if ($request->ajax()) {
             $data = Member::select('*')->where('shop_id', Auth::user()->shop_id)->latest();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-                        return '<a href="'.route('member.edit', $row->id).'" class="badge bg-primary"><i class="fas fa-edit"></i></a><a onclick="return confirm(\'Are you sure?\')" href="'.route('member.delete', $row->id).'" class="badge bg-danger"><i class="fas fa-trash"></i></a>';
+                        return '<a type="button" class="badge bg-primary" id="'.$row->Profile_No.'" onclick="dMembers(this.id)"><i class="fas fa-user text-light"></i></a> <a href="'.route('member.edit', $row->id).'" class="badge bg-primary"><i class="fas fa-edit"></i></a><a onclick="return confirm(\'Are you sure?\')" href="'.route('member.delete', $row->id).'" class="badge bg-danger"><i class="fas fa-trash"></i></a>';
                     })
                     ->rawColumns(['action'])
                     ->make(true);

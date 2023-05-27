@@ -23,12 +23,12 @@
                         <tr>
                             <th><?php echo e(__('pages.sn')); ?></th>
                             <th><?php echo e(__('Profile No')); ?></th>
-                            <th><?php echo e(__('Member Name')); ?></th>
-                            <th><?php echo e(__('Member Id')); ?></th>
-                            <th><?php echo e(__('Account No')); ?></th>
-                            <th><?php echo e(__('Home Address')); ?></th>
-                            <th><?php echo e(__('Mobile Tel')); ?></th>
-                            <th><?php echo e(__('Email Address')); ?></th>
+                            <th><?php echo e(__('Mem Name')); ?></th>
+                            <th><?php echo e(__('Mem Id')); ?></th>
+                            <th><?php echo e(__('Acc No')); ?></th>
+                            <th><?php echo e(__('Address')); ?></th>
+                            <th><?php echo e(__('Mobile')); ?></th>
+                            <th><?php echo e(__('Email')); ?></th>
                             <th><?php echo e(__('Action')); ?></th>
                         </tr>
                     </thead>
@@ -37,6 +37,32 @@
         </div>
         <div class="modal modal-slide-in new-user-modal fade" id="modals-slide-in"></div>
     </section>
+
+    <!-- Modal -->
+<div class="modal fade" id="allDMembers" tabindex="-1" aria-labelledby="allDMembersLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="allDMembersLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row" id="#dMembers">
+            <div class="col-md-4">
+                <span href="" class="badge bg-primary">Member Name</span>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('custom-js'); ?>
@@ -59,6 +85,18 @@
    
     <!-- END: Page Vendor JS-->
      <script>
+
+    function dMembers(id)
+    {
+        $.get("<?php echo e(route('member.getDM')); ?>",
+        {
+            depmem_id: id
+        },
+        function(data, status){
+            console.log("Data: " + data + "\nStatus: " + status);
+        });
+    }
+
          $(function () {
     
     var table = $('.user-list-table').DataTable({
