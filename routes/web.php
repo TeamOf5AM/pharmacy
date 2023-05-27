@@ -183,6 +183,7 @@ Route::group(['middleware' => ['local']], function () {
             Route::get('/doctor/due', 'DoctorController@due')->name('doctor.due');
 
             
+            Route::get('/member/getDM', 'MemberController@getDependentMembers')->name('member.getDM');
             Route::get('/member/list', 'MemberController@index')->name('member.list');
             Route::any('/member/add', 'MemberController@add')->name('member.add');
             Route::get('/member/view/{id}', 'MemberController@view')->name('member.view');
