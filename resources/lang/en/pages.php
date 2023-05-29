@@ -500,4 +500,5 @@
   'Dependent Members' => 'Dependent Members',
   'Dependent Members | List' => 'Dependent Members | List',
   'Edit Dependent Member' => 'Edit Dependent Member',
+  'members' => 'Members',
 );

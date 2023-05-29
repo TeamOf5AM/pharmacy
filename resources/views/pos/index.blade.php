@@ -144,14 +144,14 @@
                     <form onsubmit="placeOrder()" id="placeOrder" action="{{route('pos.order')}}">
                         <div class="card bg-transparent shadow-none pr-1 pl-1 cart-table">
                             <div class="row mb-2 align-items-center">
-                                <div class="col-lg-4 my-2 my-lg-2">
-                                    <button class="w-100 d-inline-block btn btn-info btn rounded" id="add_new_customer"
+                                <div class="col-lg-3 my-2 my-lg-2">
+                                    <button class="w-100 d-inline-block btn btn-info btn-sm rounded" id="add_new_customer"
                                             type="button" data-toggle="modal" data-target="#add-customer"
                                             title="Add Customer">
                                         <i class="tio-user-add"></i> Add new customer
                                     </button>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-3">
                                     <select
                                             onchange="customer_change(this.value);"
                                             id='customer'
@@ -162,6 +162,19 @@
                                         <option value="0">{{translate('walking_customer')}}</option>
                                         @foreach($customers as $customer)
                                             <option value="{{$customer->id}}">{{ $customer->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-lg-2">
+                                    <select
+                                            id='member'
+                                            name="member_id"
+                                            data-placeholder="Members"
+                                            class="form-control js-select2-custom mx-1"
+                                    >
+                                        <option value="0">{{translate('members')}}</option>
+                                        @foreach($members as $member)
+                                            <option value="{{$member->id}}">{{ $member->member_initials }}</option>
                                         @endforeach
                                     </select>
                                 </div>
