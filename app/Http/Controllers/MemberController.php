@@ -171,8 +171,13 @@ class MemberController extends Controller
     public function getDependentMembers(Request $request)
     {
         $input = $request->all();
-        $customer = DependentMember::where('Profile_No',$input['depmem_id'])->get();
-        return $customer;
+        $where = array();
+        if($input['depmem_id'])
+        {
+            $where[]= ['Profile_No','=',$input['depmem_id']];
+        }
+        $customer = DependentMember::select('firstname','surname')->where($where)->get();
+        return response()->json(['msg'=>'Data Found','data'=>$customer]);
 
     }
 
@@ -183,13 +188,12 @@ class MemberController extends Controller
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-                        return '<a type="button" class="badge bg-primary" id="'.$row->Profile_No.'" onclick="dMembers(this.id)"><i class="fas fa-user text-light"></i></a> <a href="'.route('member.edit', $row->id).'" class="badge bg-primary"><i class="fas fa-edit"></i></a><a onclick="return confirm(\'Are you sure?\')" href="'.route('member.delete', $row->id).'" class="badge bg-danger"><i class="fas fa-trash"></i></a>';
+                        return '<a type="button" class="badge bg-primary" id="'.$row->profile_no.'" onclick="dMembers(this.id)"><i class="fas fa-user text-light"></i></a> <a href="'.route('member.edit', $row->id).'" class="badge bg-primary"><i class="fas fa-edit"></i></a><a onclick="return confirm(\'Are you sure?\')" href="'.route('member.delete', $row->id).'" class="badge bg-danger"><i class="fas fa-trash"></i></a>';
                     })
                     ->rawColumns(['action'])
                     ->make(true);
         }
         $customer = Member::where('shop_id', Auth::user()->shop_id)->get();
-        
         return view('member.list', compact('customer'));
     }
 }

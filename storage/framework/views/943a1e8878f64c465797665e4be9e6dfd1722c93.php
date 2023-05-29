@@ -47,10 +47,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="row" id="#dMembers">
-            <div class="col-md-4">
+        <div class="row" id="alldMemberCol">
+            <!-- <div class="col-md-4">
                 <span href="" class="badge bg-primary">Member Name</span>
-            </div>
+            </div> -->
         </div>
       </div>
       <div class="modal-footer">
@@ -92,8 +92,25 @@
         {
             depmem_id: id
         },
-        function(data, status){
-            console.log("Data: " + data + "\nStatus: " + status);
+        function(data){
+            $('#allDMembers').modal('show');
+            // let html = '';
+            // data.data.forEach((item) => {
+            //     html ='<div class="col-md-4">';
+            //     html +='<span href="" class="badge bg-primary">'+item['firstname']+'</span>';
+            //     html +='</div>';
+            // });
+            const scores = data.data;
+
+            let total = '';
+            scores.forEach((score) => {
+            total += '<div class="col-md-3"><span href="" class="badge bg-primary">'+score['firstname']+'</span></div>';
+            });
+
+            console.log(total);
+            $('#alldMemberCol').html(total);
+
+            // console.log(html);
         });
     }
 

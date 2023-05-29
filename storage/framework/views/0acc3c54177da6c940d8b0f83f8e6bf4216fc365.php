@@ -146,14 +146,14 @@
                     <form onsubmit="placeOrder()" id="placeOrder" action="<?php echo e(route('pos.order')); ?>">
                         <div class="card bg-transparent shadow-none pr-1 pl-1 cart-table">
                             <div class="row mb-2 align-items-center">
-                                <div class="col-lg-4 my-2 my-lg-2">
-                                    <button class="w-100 d-inline-block btn btn-info btn rounded" id="add_new_customer"
+                                <div class="col-lg-3 my-2 my-lg-2">
+                                    <button class="w-100 d-inline-block btn btn-info btn-sm rounded" id="add_new_customer"
                                             type="button" data-toggle="modal" data-target="#add-customer"
                                             title="Add Customer">
                                         <i class="tio-user-add"></i> Add new customer
                                     </button>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-3">
                                     <select
                                             onchange="customer_change(this.value);"
                                             id='customer'
@@ -164,6 +164,19 @@
                                         <option value="0"><?php echo e(translate('walking_customer')); ?></option>
                                         <?php $__currentLoopData = $customers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $customer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <option value="<?php echo e($customer->id); ?>"><?php echo e($customer->name); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2">
+                                    <select
+                                            id='member'
+                                            name="member_id"
+                                            data-placeholder="Members"
+                                            class="form-control js-select2-custom mx-1"
+                                    >
+                                        <option value="0"><?php echo e(translate('members')); ?></option>
+                                        <?php $__currentLoopData = $members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($member->id); ?>"><?php echo e($member->member_initials); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </select>
                                 </div>

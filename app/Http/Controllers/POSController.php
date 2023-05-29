@@ -15,6 +15,7 @@ use App\Models\Leaf;
 use App\Models\Medicine;
 use App\Models\Method;
 use App\Models\Vendor;
+use App\Models\Member;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -59,6 +60,7 @@ class POSController extends Controller
         $date = date('Y-m-d', time());
         $category = $request->query('category_id', 0);
         $customers = Customer::select('id', 'name', 'shop_id', 'phone')->where('shop_id', Auth::user()->shop_id)->latest()->get();
+        $members = Member::select('id', 'member_initials', 'shop_id', 'member_surname')->where('shop_id', Auth::user()->shop_id)->latest()->get();
         $vendor = $request->query('vendor_id', 0);
         $vendors = Vendor::select('id', 'shop_id', 'name')->where('shop_id', Auth::user()->shop_id)->orderBy('name')->get();
         $keyword = $request->query('search', false);
@@ -83,7 +85,7 @@ class POSController extends Controller
                 }
             });
         })->latest()->paginate(16);
-        return view('pos.index', compact('categories', 'customers', 'category', 'vendors', 'vendor', 'keyword', 'products'));
+        return view('pos.index', compact('categories', 'customers', 'category', 'vendors', 'vendor', 'keyword', 'products','members'));
     }
 
     public function search_product(Request $request)
