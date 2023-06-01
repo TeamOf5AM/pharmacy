@@ -84,8 +84,6 @@ class DependentMemberController extends Controller
         $customer = DependentMember::where('shop_id', Auth::user()->shop_id)->where('id', $id)->firstOrFail();
         if ($request->isMethod('post')) {
             
-           
-          
             $customer->profile_no = $request->profile_no;
             $customer->member_surname = $request->member_surname;
             $customer->member_initials = $request->member_initials;
@@ -129,8 +127,8 @@ class DependentMemberController extends Controller
                 return redirect()->route('dependentMember.list');
             }
         } else {
-            
-            return view('dependentmember.edit', compact('customer'));
+            $result['options']=Member::get();
+            return view('dependentmember.edit', compact('customer'),$result);
         }
     }
     

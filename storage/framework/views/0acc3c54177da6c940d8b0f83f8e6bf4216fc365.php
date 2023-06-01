@@ -167,7 +167,7 @@
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </select>
                                 </div>
-                                <div class="col-lg-2">
+                                <div class="col-lg-3">
                                     <select
                                             id='member'
                                             name="member_id"
@@ -181,7 +181,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-lg-4 text-right">
+                                <div class="col-lg-3 text-right">
                                     <div class="d-flex align-items-center justify-content-end">
                                         <button data-toggle="modal" data-target="#short-cut-keys"
                                                 class="btn btn-warning rounded mx-2" type="button"
