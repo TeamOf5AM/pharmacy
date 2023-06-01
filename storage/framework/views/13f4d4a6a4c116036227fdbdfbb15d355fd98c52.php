@@ -340,7 +340,7 @@
                 </a>
             </li>
             <li
-                class="<?php echo e(active_if_full_match('doctor/list*')); ?> <?php echo e(active_if_full_match('doctor/edit/*')); ?> <?php echo e(active_if_full_match('doctor/view/*')); ?>">
+                class="<?php echo e(active_if_full_match('doctor/list*')); ?> <?php echo e(active_if_full_match('doctor/edit/*')); ?> <?php echo e(active_if_full_match('doctor/add')); ?> <?php echo e(active_if_full_match('doctor/view/*')); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('doctor.list')); ?>">
                     <i data-feather="circle"></i>
                     <span class="menu-item text-truncate" data-i18n="Preview"><?php echo e(__('Doctor List')); ?>
@@ -348,21 +348,21 @@
                     </span>
                 </a>
             </li>
-            <li class=" nav-item <?php echo e(active_if_full_match('prescrive/list')); ?>">
+            <li class="<?php echo e(active_if_full_match('prescrive/list')); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('prescrive.list')); ?>">
-                    <i class="fas fa-prescription"></i>
+                    <i data-feather="circle"></i>
                     <span class="menu-title text-truncate" data-i18n="Dashboards">
-                        <?php echo e(translate('Prescription')); ?>
+                        <?php echo e(translate('Prescription List')); ?>
 
                     </span>
                 </a>
             </li>
 
-            <li class=" nav-item <?php echo e(active_if_full_match('tests/list')); ?>">
+            <li class="<?php echo e(active_if_full_match('tests/list')); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('test.list')); ?>">
-                    <i class="fas fa-diagnoses"></i>
+                    <i data-feather="circle"></i>
                     <span class="menu-title text-truncate" data-i18n="Dashboards">
-                        <?php echo e(translate('Diagnosis & Tests')); ?>
+                        <?php echo e(translate('Diagnosis & Tests List')); ?>
 
                     </span>
                 </a>

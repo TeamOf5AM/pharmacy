@@ -320,27 +320,27 @@
                 </a>
             </li>
             <li
-                class="{{ active_if_full_match('doctor/list*') }} {{ active_if_full_match('doctor/edit/*') }} {{ active_if_full_match('doctor/view/*') }}">
+                class="{{ active_if_full_match('doctor/list*') }} {{ active_if_full_match('doctor/edit/*') }} {{ active_if_full_match('doctor/add') }} {{ active_if_full_match('doctor/view/*') }}">
                 <a class="d-flex align-items-center" href="{{ route('doctor.list') }}">
                     <i data-feather="circle"></i>
                     <span class="menu-item text-truncate" data-i18n="Preview">{{ __('Doctor List') }}
                     </span>
                 </a>
             </li>
-            <li class=" nav-item {{ active_if_full_match('prescrive/list') }}">
+            <li class="{{ active_if_full_match('prescrive/list') }}">
                 <a class="d-flex align-items-center" href="{{ route('prescrive.list') }}">
-                    <i class="fas fa-prescription"></i>
+                    <i data-feather="circle"></i>
                     <span class="menu-title text-truncate" data-i18n="Dashboards">
-                        {{ translate('Prescription') }}
+                        {{ translate('Prescription List') }}
                     </span>
                 </a>
             </li>
 
-            <li class=" nav-item {{ active_if_full_match('tests/list') }}">
+            <li class="{{ active_if_full_match('tests/list') }}">
                 <a class="d-flex align-items-center" href="{{ route('test.list') }}">
-                    <i class="fas fa-diagnoses"></i>
+                    <i data-feather="circle"></i>
                     <span class="menu-title text-truncate" data-i18n="Dashboards">
-                        {{ translate('Diagnosis & Tests') }}
+                        {{ translate('Diagnosis & Tests List') }}
                     </span>
                 </a>
             </li>

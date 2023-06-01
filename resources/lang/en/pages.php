@@ -501,4 +501,6 @@
   'Dependent Members | List' => 'Dependent Members | List',
   'Edit Dependent Member' => 'Edit Dependent Member',
   'members' => 'Members',
+  'Prescription List' => 'Prescription List',
+  'Diagnosis & Tests List' => 'Diagnosis & Tests List',
 );

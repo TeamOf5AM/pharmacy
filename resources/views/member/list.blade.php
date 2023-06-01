@@ -11,7 +11,7 @@
     <section class="app-user-list">
         <div class="card">
             <div class="card-body border-bottom">
-                <h4 class="card-title">{{ translate('Members') }} <span class="float-end"><a href="{{route('member.add')}}" class="btn btn-primary btn-sm">+ Add Member</a></span></h4>
+                <h4 class="card-title">{{ translate('Members') }} <span class="float-end"><a href="{{route('member.add')}}" class="btn btn-primary">Add Member</a></span></h4>
                 <div class="row">
                     <div class="col-md-4 user_role"></div>
                     <div class="col-md-4 user_plan"></div>
@@ -44,7 +44,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="allDMembersLabel">Modal title</h5>
+        <h5 class="modal-title" id="allDMembersLabel">Dependent Members</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -56,7 +56,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -95,17 +94,11 @@
         },
         function(data){
             $('#allDMembers').modal('show');
-            // let html = '';
-            // data.data.forEach((item) => {
-            //     html ='<div class="col-md-4">';
-            //     html +='<span href="" class="badge bg-primary">'+item['firstname']+'</span>';
-            //     html +='</div>';
-            // });
             const scores = data.data;
 
             let total = '';
             scores.forEach((score) => {
-            total += '<div class="col-md-3"><span href="" class="badge bg-primary">'+score['firstname']+'</span></div>';
+            total += '<div class="col-md-3"><span href="" class="badge bg-primary w-100 py-1">'+score['firstname']+'</span></div>';
             });
 
             console.log(total);
