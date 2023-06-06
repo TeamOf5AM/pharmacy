@@ -153,7 +153,9 @@ class DependentMemberController extends Controller
     {
         
          if ($request->ajax()) {
-            $data = DependentMember::select('*')->where('shop_id', Auth::user()->shop_id)->latest();
+            $data = DependentMember::select('dependent_members.*','members.member_initials')
+                    ->leftJoin('members', 'dependent_members.profile_no', '=', 'members.profile_no')
+                    ->where('dependent_members.shop_id', Auth::user()->shop_id)->orderBy('dependent_members.created_at');
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){

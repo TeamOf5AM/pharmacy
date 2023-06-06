@@ -23,7 +23,7 @@
                                   <i class="required">*</i>
                                 </label>
                                 <div class="col-sm-12">
-                                  <input type="text" class="form-control" value="{{$surname}}"  name="surname"  style="text-transform:uppercase" required>
+                                  <input type="text" class="form-control"  name="surname"  style="text-transform:uppercase" required>
                                   <!-- <small>Capital Letter</small> -->
                                 </div>
                               </div>
@@ -33,7 +33,7 @@
                                   <i class="required">*</i>
                                 </label>
                                 <div class="col-sm-12">
-                                  <input type="text" class="form-control" value="{{$firstname}}"  name="firstname" style="text-transform:uppercase" required>
+                                  <input type="text" class="form-control"  name="firstname" style="text-transform:uppercase" required>
                                 </div>
                               </div>
                               <div class="form-group">
