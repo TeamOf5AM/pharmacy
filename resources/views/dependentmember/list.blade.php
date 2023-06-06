@@ -25,6 +25,7 @@
                             <th>{{ __('pages.sn') }}</th>
                             <th>{{ __('Firstname') }}</th>
                             <th>{{ __('Surname') }}</th>
+                            <th>{{ __('Main Member') }}</th>
                             <th>{{ __('Gender') }}</th>
                             <th>{{ __('Relation') }}</th>
                             <th>{{ __('Action') }}</th>
@@ -67,6 +68,7 @@
           { data: 'id', name: 'id' , orderable: false, searchable: false},
             {data: 'Firstname', name: 'Firstname'},
             {data: 'Surname', name: 'Surname'},
+            {data: 'member_initials', name: 'member_initials'},
             {data: 'Gender', name: 'Gender'},
             {data: 'Relation', name: 'Relation'},
             {data: 'action', name: 'action', orderable: false, searchable: false},

@@ -16,6 +16,7 @@ use App\Models\Medicine;
 use App\Models\Method;
 use App\Models\Vendor;
 use App\Models\Member;
+use App\Models\Prescription;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -69,6 +70,14 @@ class POSController extends Controller
                 ->orWhere('global', 1);
         })->latest()->get();
         $key = explode(' ', $keyword);
+        $pres = [];
+
+        if($request->pres)
+        {
+            $pres_id = $request->pres;
+            $pres = Prescription::findorFail($pres_id);
+        }
+
 
         $products = Medicine::select('name', 'strength', 'id', 'image', 'vendor_id')->where(function ($q) {
             $q->where('shop_id', Auth::user()->shop_id)->orWhere('global', 1);
@@ -85,7 +94,7 @@ class POSController extends Controller
                 }
             });
         })->latest()->paginate(16);
-        return view('pos.index', compact('categories', 'customers', 'category', 'vendors', 'vendor', 'keyword', 'products','members'));
+        return view('pos.index', compact('categories', 'customers', 'category', 'vendors', 'vendor', 'keyword', 'products','members','pres'));
     }
 
     public function search_product(Request $request)

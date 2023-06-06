@@ -193,7 +193,7 @@ class PrescriptionController extends Controller
                     ->addColumn('action', function($row){
                         if($row->global != 1){
                            return '<a href="'.route('prescrive.data', $row->id).'" target="_blank"><i class="fa fa-print"></i></a>
-                       <a onclick="return confirm(\'Are you sure?\')" href="'.route('prescrive.delete', $row->id).'" class="badge bg-danger"><i class="fas fa-trash"></i></a>';
+                       <a onclick="return confirm(\'Are you sure?\')" href="'.route('prescrive.delete', $row->id).'" class="badge bg-danger"><i class="fas fa-trash"></i></a><a href="'.url('pos?pres='.$row->id).'" class="btn btn-primary btn-sm">+ Pos</a>';
                         }
       
                     })
