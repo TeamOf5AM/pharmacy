@@ -176,11 +176,7 @@
      <img src="<?php echo e(asset('prescription/icons8-pharmacy-100.png')); ?>" style="width: 250px" />
     </div>
 <div style="width: 100%;position:absolute; bottom: 0; left: 50%; transform: translateX(-50%); text-align:center: font-size: 16px; border-bottom: 12px solid #00AABC">
-    <p style="text-align:center; margin-bottom: 0!important">House:24, Road:14, Niketon Gulshan-1, Dhaka Bangladesh 1219.</p>
-    <div style="display:flex; gap:5px; justify-content:center">
-        <p style="margin-bottom: 0 !important">Phone: +88 01973198574. </p>
-        <p>email: connect@ayaantec.com</p>
-    </div>
+
 </div>
 
 <script>
