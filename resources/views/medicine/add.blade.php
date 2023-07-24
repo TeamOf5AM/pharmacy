@@ -21,8 +21,20 @@
                      <div class="row">
                           <div class="col-md-4 col-12">
                               <div class="mb-1">
+                                  <label class="form-label" for="first-name-column">{{ __('pages.product_code') }}</label>
+                                  <input type="text" id="first-name-column" class="form-control" placeholder="{{ __('pages.product_code') }}" name="product_code">
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-12">
+                              <div class="mb-1">
                                   <label class="form-label" for="first-name-column">{{ __('pages.qr_code') }}</label>
                                   <input type="text" id="first-name-column" class="form-control" placeholder="{{ __('pages.qr_code') }}" name="qr_code">
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-12">
+                              <div class="mb-1">
+                                  <label class="form-label" for="first-name-column">{{ __('pages.nappie_code') }}</label>
+                                  <input type="text" id="first-name-column" class="form-control" placeholder="{{ __('pages.nappie_code') }}" name="nappie_code">
                               </div>
                           </div>
                           <div class="col-md-4 col-12">
@@ -49,49 +61,61 @@
                                   <select class="select2 form-select" id="select2-basic" data-select2-id="select2-basic" tabindex="-1" aria-hidden="true" name="leaf_id" required>
                                       <option value="">{{translate('Select Box Size')}}</option>
                                       @foreach($leaf as $leafs)
-                                          <option value="{{$leafs->id}}">{{$leafs->name}} ({{$leafs->amount}}</option>
+                                      <option value="{{$leafs->id}}">{{$leafs->name}} ({{$leafs->amount}}</option>
                                       @endforeach
-                                  </select>
-                              </div>
-                          </div>
-                          <div class="col-md-4 col-12">
-                              <div class="mb-1">
-                                  <label class="form-label" for="first-name-column">{{ __('pages.units') }} <font color="red">*</font></label>
-                                  <select class="select2 form-select" id="select2-basic" data-select2-id="select2-basic" tabindex="-1" aria-hidden="true" name="unit_id" required>
-                                      <option value="">{{translate('Select Unit')}}</option>
-                                      @foreach($unit as $leafs)
-                                          <option value="{{$leafs->id}}">{{$leafs->name}} </option>
-                                      @endforeach
-                                  </select>
-                              </div>
-                          </div>
-                          <div class="col-md-4 col-12">
-                              <div class="mb-1">
-                                  <label class="form-label" for="first-name-column">{{ __('pages.shelf') }}</label>
-                                  <input type="text" id="first-name-column" class="form-control" placeholder="{{ __('pages.shelf') }}" name="shelf">
-                              </div>
-                          </div>
-                          <div class="col-md-4 col-12">
-                              <div class="mb-1">
-                                  <label class="form-label" for="first-name-column">{{ __('pages.desc') }}</label>
-                                  <input type="text" id="first-name-column" class="form-control" placeholder="{{ __('pages.desc') }}" name="des">
-                              </div>
-                          </div>
-                          <div class="col-md-4 col-12">
-                              <div class="mb-1">
-                                  <label class="form-label" for="first-name-column">{{ __('pages.category') }} <font color="red">*</font></label>
-                                  <select class="select2 form-select" id="select2-basic" data-select2-id="select2-basic" tabindex="-1" aria-hidden="true" name="category_id" required>
-                                      <option value="">{{translate('Select Category')}}</option>
-                                      @foreach($category as $leafs)
-                                          <option value="{{$leafs->id}}">{{$leafs->name}} </option>
-                                      @endforeach
-                                  </select>
-                              </div>
-                          </div>
-                          <div class="col-md-4 col-12">
-                              <div class="mb-1">
-                                  <label class="form-label" for="first-name-column">{{ __('pages.types') }} <font color="red">*</font></label>
-                                  <select class="select2 form-select" id="select2-basic" data-select2-id="select2-basic" tabindex="-1" aria-hidden="true" name="type_id" required>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="mb-1">
+                                    <label class="form-label" for="first-name-column">{{ __('pages.units') }} <font color="red">*</font></label>
+                                    <select class="select2 form-select" id="select2-basic" data-select2-id="select2-basic" tabindex="-1" aria-hidden="true" name="unit_id" required>
+                                        <option value="">{{translate('Select Unit')}}</option>
+                                        @foreach($unit as $leafs)
+                                        <option value="{{$leafs->id}}">{{$leafs->name}} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="mb-1">
+                                    <label class="form-label" for="first-name-column">{{ __('pages.shelf') }}</label>
+                                    <input type="text" id="first-name-column" class="form-control" placeholder="{{ __('pages.shelf') }}" name="shelf">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="mb-1">
+                                    <label class="form-label" for="first-name-column">{{ __('pages.long_desc') }} <font color="red">*</font></label>
+                                    <input type="text" id="first-name-column" class="form-control" placeholder="{{ __('pages.long_desc') }}" name="long_desc" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="mb-1">
+                                    <label class="form-label" for="first-name-column">{{ __('pages.short_desc') }}</label>
+                                    <input type="text" id="first-name-column" class="form-control" placeholder="{{ __('pages.desc') }}" name="des">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="mb-1">
+                                    <label class="form-label" for="first-name-column">{{ __('pages.category') }} <font color="red">*</font></label>
+                                    <select class="select2 form-select" id="select2-basic" data-select2-id="select2-basic" tabindex="-1" aria-hidden="true" name="category_id" required>
+                                        <option value="">{{translate('Select Category')}}</option>
+                                        @foreach($category as $leafs)
+                                        <option value="{{$leafs->id}}">{{$leafs->name}} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="mb-1">
+                                    <label class="form-label" for="first-name-column">{{ __('pages.types') }} <font color="red">*</font></label>
+                                    <select class="select2 form-select" id="select2-basic" data-select2-id="select2-basic" tabindex="-1" aria-hidden="true" name="type_id" required>
+                                      <div class="col-md-4 col-12">
+                                          <div class="mb-1">
+                                              <label class="form-label" for="first-name-column">{{ __('pages.generic_name') }}</label>
+                                              <input type="text" id="first-name-column" class="form-control" placeholder="{{ __('pages.generic_name') }}" name="generic_name"  name="strength">
+                                          </div>
+                                      </div>
                                       <option value="">Select Type</option>
                                       @foreach($type as $leafs)
                                           <option value="{{$leafs->id}}" >{{$leafs->name}} </option>
