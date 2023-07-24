@@ -208,4 +208,4 @@ unset($__errorArgs, $__bag); ?>
 </body>
 <!-- END: Body-->
 
-</html><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/pharmacy/resources/views/auth/login.blade.php ENDPATH**/ ?>
+</html><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/pharma/resources/views/auth/login.blade.php ENDPATH**/ ?>

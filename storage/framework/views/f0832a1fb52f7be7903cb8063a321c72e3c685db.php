@@ -55,7 +55,7 @@
                 </li>
                 <?php endif; ?>
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder"><?php echo e(Auth::user()->name); ?></span><span class="user-status"><?php echo e(Auth::user()->role ? Auth::user()->role->name: 'Admin'); ?></span></div><span class=""><img class="round" <?php if(!empty(Auth::user()->image)): ?> src="<?php echo e(asset('storage/images/profile/'.Auth::user()->image.'')); ?>" <?php else: ?> src="<?php echo e(asset('dashboard/app-assets/images/f2.jpg')); ?>" <?php endif; ?> alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder"><?php echo e(Auth::user()->name); ?></span><span class="user-status"><?php echo e(Auth::user()->role ? Auth::user()->role->name: 'Admin'); ?></span></div><span class="avatar"><img class="round" <?php if(!empty(Auth::user()->image)): ?> src="<?php echo e(asset('storage/images/profile/'.Auth::user()->image.'')); ?>" <?php else: ?> src="<?php echo e(asset('dashboard/app-assets/images/f2.jpg')); ?>" <?php endif; ?> alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropDown shadow-lg border-0" aria-labelledby="dropdown-user">
                        
@@ -131,4 +131,4 @@
     
     <!-- END: Header-->
     
-<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/pharmacy/resources/views/layouts/elements/header.blade.php ENDPATH**/ ?>
+<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/pharma/resources/views/layouts/elements/header.blade.php ENDPATH**/ ?>
