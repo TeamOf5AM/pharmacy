@@ -1,13 +1,13 @@
 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
     <li class=" nav-item <?php echo e(active_if_full_match('dashboard')); ?>">
         <a class="d-flex align-items-center" href="<?php echo e(route('dashboard')); ?>">
-            <i class="fa fa-tachometer" aria-hidden="true"></i>
+            <!-- <i class="fa fa-tachometer" aria-hidden="true"></i> -->
             <span class="menu-title text-truncate" data-i18n="Dashboards"><?php echo e(__('pages.dashboard')); ?></span>
         </a>
     </li>
     <li class=" nav-item <?php echo e(active_if_match('customer/add')); ?> || <?php echo e(active_if_match('customer/list')); ?>">
         <a class="d-flex align-items-center" href="#">
-            <i class="fas fa-users"></i>
+            <!-- <i class="fas fa-users"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">
                 <?php echo e(__('pages.customer')); ?>
 
@@ -38,7 +38,7 @@
     <li
         class=" nav-item <?php echo e(active_if_match('in_stock')); ?> || <?php echo e(active_if_match('emergency-stock')); ?> || <?php echo e(active_if_match('medicines/stockout')); ?> || <?php echo e(active_if_match('upcoming')); ?> || <?php echo e(active_if_match('medicines/expired')); ?>">
         <a class="d-flex align-items-center" href="#">
-            <i class="fas fa-pills"></i>
+            <!-- <i class="fas fa-pills"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">
                 <?php echo e(translate('Medicine Stock')); ?>
 
@@ -99,7 +99,7 @@
     <!--Systems menus -->
     <li class=" nav-item <?php echo e(active_if_match('admin/admin')); ?> || <?php echo e(active_if_match('admin/role')); ?>">
         <a class="d-flex align-items-center" href="#">
-            <i class="fas fa-cogs"></i>
+            <!-- <i class="fas fa-cogs"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">
                 <?php echo e(translate('Systems')); ?>
 
@@ -136,8 +136,9 @@
         </ul>
     </li>
 
-    <li class=" nav-item <?php echo e(active_if_match('supplier/*')); ?>"><a class="d-flex align-items-center" href="#"><i
-                class="fa-solid fa-people-carry-box"></i><span class="menu-title text-truncate"
+    <li class=" nav-item <?php echo e(active_if_match('supplier/*')); ?>"><a class="d-flex align-items-center" href="#">
+        <!-- <i class="fa-solid fa-people-carry-box"></i> -->
+                <span class="menu-title text-truncate"
                 data-i18n="Invoice"><?php echo e(__('pages.supplier')); ?></span></a>
         <ul class="menu-content">
             <li class="<?php echo e(active_if_full_match('supplier/add')); ?>"><a class="d-flex align-items-center"
@@ -156,7 +157,7 @@
     <!-- Vendors Routes -->
     <li class=" nav-item <?php echo e(active_if_match('vendor/*')); ?>">
         <a class="d-flex align-items-center" href="#">
-            <i class="fa-solid fa-store"></i>
+            <!-- <i class="fa-solid fa-store"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice"><?php echo e(__('pages.vendors')); ?></span>
         </a>
         <ul class="menu-content">
@@ -177,7 +178,9 @@
 
     <li
         class=" nav-item <?php echo e(active_if_match('medicines/add')); ?> || <?php echo e(active_if_match('medicines/list')); ?> || <?php echo e(active_if_match('medicines/categories')); ?> || <?php echo e(active_if_match('medicines/unit')); ?> || <?php echo e(active_if_match('medicines/leaf')); ?> || <?php echo e(active_if_match('medicines/types')); ?>">
-        <a class="d-flex align-items-center" href="#"><i class="fas fa-pills"></i><span
+        <a class="d-flex align-items-center" href="#">
+            <!-- <i class="fas fa-pills"></i> -->
+            <span
                 class="menu-title text-truncate" data-i18n="Invoice"><?php echo e(__('pages.medicine')); ?></span></a>
         <ul class="menu-content">
             <li class="<?php echo e(active_if_full_match('medicines/add')); ?>"><a class="d-flex align-items-center"
@@ -190,18 +193,22 @@
                         data-i18n="Preview"><?php echo e(__('pages.medicine_list')); ?></span></a>
             </li>
 
-            <li class="<?php echo e(active_if_full_match('medicines/categories')); ?>"><a class="d-flex align-items-center"
-                    href="<?php echo e(route('category')); ?>"><i data-feather="circle"></i><span
-                        class="menu-item text-truncate" data-i18n="Add"><?php echo e(__('pages.categories')); ?></span></a>
-            </li>
             <li class="<?php echo e(active_if_full_match('medicines/unit')); ?>"><a class="d-flex align-items-center"
-                    href="<?php echo e(route('units')); ?>"><i data-feather="circle"></i><span class="menu-item text-truncate"
-                        data-i18n="Add"><?php echo e(__('pages.units')); ?></span></a>
-            </li>
-            <li class="<?php echo e(active_if_full_match('medicines/leaf')); ?>"><a class="d-flex align-items-center"
-                    href="<?php echo e(route('leaf')); ?>"><i data-feather="circle"></i><span class="menu-item text-truncate"
-                        data-i18n="Add"><?php echo e(__('pages.leaf')); ?></span></a>
-            </li>
+            href="<?php echo e(route('units')); ?>"><i data-feather="circle"></i><span class="menu-item text-truncate"
+            data-i18n="Add"><?php echo e(__('pages.units')); ?></span></a>
+        </li>
+        <li class="<?php echo e(active_if_full_match('medicines/leaf')); ?>"><a class="d-flex align-items-center"
+            href="<?php echo e(route('leaf')); ?>"><i data-feather="circle"></i><span class="menu-item text-truncate"
+            data-i18n="Add"><?php echo e(__('pages.leaf')); ?></span></a>
+        </li>
+        <li class="<?php echo e(active_if_full_match('medicines/location')); ?>"><a class="d-flex align-items-center"
+            href="<?php echo e(route('location')); ?>"><i data-feather="circle"></i><span class="menu-item text-truncate"
+            data-i18n="Add"><?php echo e(__('pages.bin_loc')); ?></span></a>
+        </li>
+        <li class="<?php echo e(active_if_full_match('medicines/categories')); ?>"><a class="d-flex align-items-center"
+                href="<?php echo e(route('category')); ?>"><i data-feather="circle"></i><span
+                    class="menu-item text-truncate" data-i18n="Add"><?php echo e(__('pages.categories')); ?></span></a>
+        </li>
             <li class="<?php echo e(active_if_full_match('medicines/type*')); ?>"><a class="d-flex align-items-center"
                     href="<?php echo e(route('types')); ?>"><i data-feather="circle"></i><span class="menu-item text-truncate"
                         data-i18n="Add"><?php echo e(__('pages.types')); ?></span></a>
@@ -211,7 +218,9 @@
 
 
     <li class=" nav-item <?php echo e(active_if_match('purchase/*')); ?> "><a class="d-flex align-items-center"
-            href="#"><i class="fas fa-cart-shopping"></i><span class="menu-title text-truncate"
+            href="#">
+            <!-- <i class="fas fa-cart-shopping"></i> -->
+            <span class="menu-title text-truncate"
                 data-i18n="Invoice"><?php echo e(__('pages.purchase')); ?></span></a>
         <ul class="menu-content">
             <li class="<?php echo e(active_if_full_match('sell')); ?> <?php echo e(active_if_match('sell')); ?>"><a
@@ -234,7 +243,7 @@
     </li>
 
     <li class=" nav-item <?php echo e(active_if_match('invoice*')); ?> || <?php echo e(active_if_match('returned_history')); ?>"><a
-            class="d-flex align-items-center" href="#"><i class="fa-solid fa-file-invoice"></i><span
+            class="d-flex align-items-center" href="#"></i><span
                 class="menu-title text-truncate" data-i18n="Invoice"><?php echo e(translate('Sales')); ?></span></a>
         <ul class="menu-content">
             <li class="<?php echo e(active_if_full_match('invoice/new*')); ?>"><a class="d-flex align-items-center"
@@ -256,7 +265,7 @@
     <li
         class=" nav-item <?php echo e(active_if_match('report/medicine/topsell')); ?> || <?php echo e(active_if_match('report/customer-due')); ?> || <?php echo e(active_if_match('report/supplier/due')); ?> || <?php echo e(active_if_match('reports')); ?> || <?php echo e(active_if_match('profit')); ?>">
         <a class="d-flex align-items-center" href="#">
-            <i class="fa-solid fa-chart-line"></i>
+            <!-- <i class="fa-solid fa-chart-line"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">
                 <?php echo e(translate('Reports')); ?>
 
@@ -309,24 +318,15 @@
 
     <li class=" nav-item <?php echo e(active_if_match('Prescription/*')); ?>">
         <a class="d-flex align-items-center" href="#">
-            <i class="fas fa-users"></i>
+            <!-- <i class="fas fa-users"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">
                 <?php echo e(translate('Prescription')); ?>
 
             </span>
         </a>
         <ul class="menu-content">
-            <li class="<?php echo e(active_if_full_match('doctor/add')); ?>">
-                <a class="d-flex align-items-center" href="<?php echo e(route('doctor.add')); ?>">
-                    <i data-feather="circle"></i>
-                    <span class="menu-item text-truncate" data-i18n="List">
-                        <?php echo e(__('Add Doctor')); ?>
-
-                    </span>
-                </a>
-            </li>
             <li
-                class="<?php echo e(active_if_full_match('doctor/list*')); ?> <?php echo e(active_if_full_match('doctor/edit/*')); ?> <?php echo e(active_if_full_match('doctor/view/*')); ?>">
+                class="<?php echo e(active_if_full_match('doctor/list*')); ?> <?php echo e(active_if_full_match('doctor/edit/*')); ?> <?php echo e(active_if_full_match('doctor/add')); ?> <?php echo e(active_if_full_match('doctor/view/*')); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('doctor.list')); ?>">
                     <i data-feather="circle"></i>
                     <span class="menu-item text-truncate" data-i18n="Preview"><?php echo e(__('Doctor List')); ?>
@@ -334,21 +334,21 @@
                     </span>
                 </a>
             </li>
-            <li class=" nav-item <?php echo e(active_if_full_match('prescrive/list')); ?>">
+            <li class="<?php echo e(active_if_full_match('prescrive/list')); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('prescrive.list')); ?>">
-                    <i class="fas fa-prescription"></i>
+                    <i data-feather="circle"></i>
                     <span class="menu-title text-truncate" data-i18n="Dashboards">
-                        <?php echo e(translate('Prescription')); ?>
+                        <?php echo e(translate('Prescription List')); ?>
 
                     </span>
                 </a>
             </li>
 
-            <li class=" nav-item <?php echo e(active_if_full_match('tests/list')); ?>">
+            <li class="<?php echo e(active_if_full_match('tests/list')); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('test.list')); ?>">
-                    <i class="fas fa-diagnoses"></i>
+                    <i data-feather="circle"></i>
                     <span class="menu-title text-truncate" data-i18n="Dashboards">
-                        <?php echo e(translate('Diagnosis & Tests')); ?>
+                        <?php echo e(translate('Diagnosis & Tests List')); ?>
 
                     </span>
                 </a>
@@ -385,7 +385,7 @@
 
     <li class=" nav-item <?php echo e(active_if_full_match('payment_methdod')); ?>">
         <a class="d-flex align-items-center" href="<?php echo e(route('payment.method')); ?>">
-            <i class="fa-solid fa-money-bill-wave"></i>
+            <!-- <i class="fa-solid fa-money-bill-wave"></i> -->
             <span class="menu-title text-truncate" data-i18n="Dashboards">
                 <?php echo e(__('pages.payment_method')); ?>
 
@@ -395,7 +395,7 @@
 
     <li class=" nav-item <?php echo e(active_if_full_match('settings')); ?>">
         <a class="d-flex align-items-center" href="<?php echo e(route('settings')); ?>">
-            <i class="fa-solid fa-cog"></i>
+            <!-- <i class="fa-solid fa-cog"></i> -->
             <span class="menu-title text-truncate" data-i18n="Dashboards">
                 <?php echo e(__('pages.site_setting')); ?>
 

@@ -1,13 +1,13 @@
 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
     <li class=" nav-item {{ active_if_full_match('dashboard') }}">
         <a class="d-flex align-items-center" href="{{ route('dashboard') }}">
-            <i class="fa fa-tachometer" aria-hidden="true"></i>
+            <!-- <i class="fa fa-tachometer" aria-hidden="true"></i> -->
             <span class="menu-title text-truncate" data-i18n="Dashboards">{{ __('pages.dashboard') }}</span>
         </a>
     </li>
     <li class=" nav-item {{ active_if_match('customer/add') }} || {{ active_if_match('customer/list') }}">
         <a class="d-flex align-items-center" href="#">
-            <i class="fas fa-users"></i>
+            <!-- <i class="fas fa-users"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">
                 {{ __('pages.customer') }}
             </span>
@@ -35,7 +35,7 @@
     <li
         class=" nav-item {{ active_if_match('in_stock') }} || {{ active_if_match('emergency-stock') }} || {{ active_if_match('medicines/stockout') }} || {{ active_if_match('upcoming') }} || {{ active_if_match('medicines/expired') }}">
         <a class="d-flex align-items-center" href="#">
-            <i class="fas fa-pills"></i>
+            <!-- <i class="fas fa-pills"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">
                 {{ translate('Medicine Stock') }}
             </span>
@@ -90,7 +90,7 @@
     <!--Systems menus -->
     <li class=" nav-item {{ active_if_match('admin/admin') }} || {{ active_if_match('admin/role') }}">
         <a class="d-flex align-items-center" href="#">
-            <i class="fas fa-cogs"></i>
+            <!-- <i class="fas fa-cogs"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">
                 {{ translate('Systems') }}
             </span>
@@ -123,8 +123,9 @@
         </ul>
     </li>
 
-    <li class=" nav-item {{ active_if_match('supplier/*') }}"><a class="d-flex align-items-center" href="#"><i
-                class="fa-solid fa-people-carry-box"></i><span class="menu-title text-truncate"
+    <li class=" nav-item {{ active_if_match('supplier/*') }}"><a class="d-flex align-items-center" href="#">
+        <!-- <i class="fa-solid fa-people-carry-box"></i> -->
+                <span class="menu-title text-truncate"
                 data-i18n="Invoice">{{ __('pages.supplier') }}</span></a>
         <ul class="menu-content">
             <li class="{{ active_if_full_match('supplier/add') }}"><a class="d-flex align-items-center"
@@ -143,7 +144,7 @@
     <!-- Vendors Routes -->
     <li class=" nav-item {{ active_if_match('vendor/*') }}">
         <a class="d-flex align-items-center" href="#">
-            <i class="fa-solid fa-store"></i>
+            <!-- <i class="fa-solid fa-store"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">{{ __('pages.vendors') }}</span>
         </a>
         <ul class="menu-content">
@@ -164,7 +165,9 @@
 
     <li
         class=" nav-item {{ active_if_match('medicines/add') }} || {{ active_if_match('medicines/list') }} || {{ active_if_match('medicines/categories') }} || {{ active_if_match('medicines/unit') }} || {{ active_if_match('medicines/leaf') }} || {{ active_if_match('medicines/types') }}">
-        <a class="d-flex align-items-center" href="#"><i class="fas fa-pills"></i><span
+        <a class="d-flex align-items-center" href="#">
+            <!-- <i class="fas fa-pills"></i> -->
+            <span
                 class="menu-title text-truncate" data-i18n="Invoice">{{ __('pages.medicine') }}</span></a>
         <ul class="menu-content">
             <li class="{{ active_if_full_match('medicines/add') }}"><a class="d-flex align-items-center"
@@ -177,18 +180,22 @@
                         data-i18n="Preview">{{ __('pages.medicine_list') }}</span></a>
             </li>
 
-            <li class="{{ active_if_full_match('medicines/categories') }}"><a class="d-flex align-items-center"
-                    href="{{ route('category') }}"><i data-feather="circle"></i><span
-                        class="menu-item text-truncate" data-i18n="Add">{{ __('pages.categories') }}</span></a>
-            </li>
             <li class="{{ active_if_full_match('medicines/unit') }}"><a class="d-flex align-items-center"
-                    href="{{ route('units') }}"><i data-feather="circle"></i><span class="menu-item text-truncate"
-                        data-i18n="Add">{{ __('pages.units') }}</span></a>
-            </li>
-            <li class="{{ active_if_full_match('medicines/leaf') }}"><a class="d-flex align-items-center"
-                    href="{{ route('leaf') }}"><i data-feather="circle"></i><span class="menu-item text-truncate"
-                        data-i18n="Add">{{ __('pages.leaf') }}</span></a>
-            </li>
+            href="{{ route('units') }}"><i data-feather="circle"></i><span class="menu-item text-truncate"
+            data-i18n="Add">{{ __('pages.units') }}</span></a>
+        </li>
+        <li class="{{ active_if_full_match('medicines/leaf') }}"><a class="d-flex align-items-center"
+            href="{{ route('leaf') }}"><i data-feather="circle"></i><span class="menu-item text-truncate"
+            data-i18n="Add">{{ __('pages.leaf') }}</span></a>
+        </li>
+        <li class="{{ active_if_full_match('medicines/location') }}"><a class="d-flex align-items-center"
+            href="{{ route('location') }}"><i data-feather="circle"></i><span class="menu-item text-truncate"
+            data-i18n="Add">{{ __('pages.bin_loc') }}</span></a>
+        </li>
+        <li class="{{ active_if_full_match('medicines/categories') }}"><a class="d-flex align-items-center"
+                href="{{ route('category') }}"><i data-feather="circle"></i><span
+                    class="menu-item text-truncate" data-i18n="Add">{{ __('pages.categories') }}</span></a>
+        </li>
             <li class="{{ active_if_full_match('medicines/type*') }}"><a class="d-flex align-items-center"
                     href="{{ route('types') }}"><i data-feather="circle"></i><span class="menu-item text-truncate"
                         data-i18n="Add">{{ __('pages.types') }}</span></a>
@@ -198,7 +205,9 @@
 
 
     <li class=" nav-item {{ active_if_match('purchase/*') }} "><a class="d-flex align-items-center"
-            href="#"><i class="fas fa-cart-shopping"></i><span class="menu-title text-truncate"
+            href="#">
+            <!-- <i class="fas fa-cart-shopping"></i> -->
+            <span class="menu-title text-truncate"
                 data-i18n="Invoice">{{ __('pages.purchase') }}</span></a>
         <ul class="menu-content">
             <li class="{{ active_if_full_match('sell') }} {{ active_if_match('sell') }}"><a
@@ -221,7 +230,7 @@
     </li>
 
     <li class=" nav-item {{ active_if_match('invoice*') }} || {{ active_if_match('returned_history') }}"><a
-            class="d-flex align-items-center" href="#"><i class="fa-solid fa-file-invoice"></i><span
+            class="d-flex align-items-center" href="#"></i><span
                 class="menu-title text-truncate" data-i18n="Invoice">{{ translate('Sales') }}</span></a>
         <ul class="menu-content">
             <li class="{{ active_if_full_match('invoice/new*') }}"><a class="d-flex align-items-center"
@@ -243,7 +252,7 @@
     <li
         class=" nav-item {{ active_if_match('report/medicine/topsell') }} || {{ active_if_match('report/customer-due') }} || {{ active_if_match('report/supplier/due') }} || {{ active_if_match('reports') }} || {{ active_if_match('profit') }}">
         <a class="d-flex align-items-center" href="#">
-            <i class="fa-solid fa-chart-line"></i>
+            <!-- <i class="fa-solid fa-chart-line"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">
                 {{ translate('Reports') }}
             </span>
@@ -292,42 +301,34 @@
 
     <li class=" nav-item {{ active_if_match('Prescription/*') }}">
         <a class="d-flex align-items-center" href="#">
-            <i class="fas fa-users"></i>
+            <!-- <i class="fas fa-users"></i> -->
             <span class="menu-title text-truncate" data-i18n="Invoice">
                 {{ translate('Prescription') }}
             </span>
         </a>
         <ul class="menu-content">
-            <li class="{{ active_if_full_match('doctor/add') }}">
-                <a class="d-flex align-items-center" href="{{ route('doctor.add') }}">
-                    <i data-feather="circle"></i>
-                    <span class="menu-item text-truncate" data-i18n="List">
-                        {{ __('Add Doctor') }}
-                    </span>
-                </a>
-            </li>
             <li
-                class="{{ active_if_full_match('doctor/list*') }} {{ active_if_full_match('doctor/edit/*') }} {{ active_if_full_match('doctor/view/*') }}">
+                class="{{ active_if_full_match('doctor/list*') }} {{ active_if_full_match('doctor/edit/*') }} {{ active_if_full_match('doctor/add') }} {{ active_if_full_match('doctor/view/*') }}">
                 <a class="d-flex align-items-center" href="{{ route('doctor.list') }}">
                     <i data-feather="circle"></i>
                     <span class="menu-item text-truncate" data-i18n="Preview">{{ __('Doctor List') }}
                     </span>
                 </a>
             </li>
-            <li class=" nav-item {{ active_if_full_match('prescrive/list') }}">
+            <li class="{{ active_if_full_match('prescrive/list') }}">
                 <a class="d-flex align-items-center" href="{{ route('prescrive.list') }}">
-                    <i class="fas fa-prescription"></i>
+                    <i data-feather="circle"></i>
                     <span class="menu-title text-truncate" data-i18n="Dashboards">
-                        {{ translate('Prescription') }}
+                        {{ translate('Prescription List') }}
                     </span>
                 </a>
             </li>
 
-            <li class=" nav-item {{ active_if_full_match('tests/list') }}">
+            <li class="{{ active_if_full_match('tests/list') }}">
                 <a class="d-flex align-items-center" href="{{ route('test.list') }}">
-                    <i class="fas fa-diagnoses"></i>
+                    <i data-feather="circle"></i>
                     <span class="menu-title text-truncate" data-i18n="Dashboards">
-                        {{ translate('Diagnosis & Tests') }}
+                        {{ translate('Diagnosis & Tests List') }}
                     </span>
                 </a>
             </li>
@@ -363,7 +364,7 @@
 
     <li class=" nav-item {{ active_if_full_match('payment_methdod') }}">
         <a class="d-flex align-items-center" href="{{ route('payment.method') }}">
-            <i class="fa-solid fa-money-bill-wave"></i>
+            <!-- <i class="fa-solid fa-money-bill-wave"></i> -->
             <span class="menu-title text-truncate" data-i18n="Dashboards">
                 {{ __('pages.payment_method') }}
             </span>
@@ -372,7 +373,7 @@
 
     <li class=" nav-item {{ active_if_full_match('settings') }}">
         <a class="d-flex align-items-center" href="{{ route('settings') }}">
-            <i class="fa-solid fa-cog"></i>
+            <!-- <i class="fa-solid fa-cog"></i> -->
             <span class="menu-title text-truncate" data-i18n="Dashboards">
                 {{ __('pages.site_setting') }}
             </span>

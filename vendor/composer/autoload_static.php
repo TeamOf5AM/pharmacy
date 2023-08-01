@@ -701,6 +701,7 @@ class ComposerStaticInit85055ce776cd5e41857575012804615a
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\InvoiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/InvoiceController.php',
         'App\\Http\\Controllers\\LeafController' => __DIR__ . '/../..' . '/app/Http/Controllers/LeafController.php',
+        'App\\Http\\Controllers\\LocationController' => __DIR__ . '/../..' . '/app/Http/Controllers/LocationController.php',
         'App\\Http\\Controllers\\MedicineController' => __DIR__ . '/../..' . '/app/Http/Controllers/MedicineController.php',
         'App\\Http\\Controllers\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessageController.php',
         'App\\Http\\Controllers\\POSController' => __DIR__ . '/../..' . '/app/Http/Controllers/POSController.php',

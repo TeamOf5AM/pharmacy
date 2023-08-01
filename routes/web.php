@@ -205,6 +205,7 @@ Route::group(['middleware' => ['local']], function () {
             Route::get('/medicines/stockout', 'MedicineController@stockout')->name('stockout');
             Route::get('/medicines/expired', 'MedicineController@expired')->name('expired');
             Route::get('/medicines/leaf', 'LeafController@leaf')->name('leaf');
+            Route::get('/medicines/location', 'LocationController@leaf')->name('location');
             Route::get('/medicines/unit', 'UnitController@unit')->name('units');
             Route::any('/medicines/unit/add', 'UnitController@add')->name('unit.add');
             Route::any('/medicines/unit/edit/{id}', 'UnitController@edit')->name('unit.edit');
@@ -220,6 +221,10 @@ Route::group(['middleware' => ['local']], function () {
             Route::group(['prefix' => 'accounts', 'as' => 'accounting.'], function () {
                 Route::get('/charts/list', 'AccountingController@chartlist')->name('charts.list');
             });
+
+            Route::any('/medicines/location/add', 'LocationController@add')->name('location.add');
+            Route::any('/medicines/location/edit/{id}', 'LocationController@edit')->name('location.edit');
+            Route::any('/medicines/location/delete/{id}', 'LocationController@delete')->name('location.delete');
 
             Route::any('/medicines/leaf/add', 'LeafController@add')->name('leaf.add');
             Route::any('/medicines/leaf/edit/{id}', 'LeafController@edit')->name('leaf.edit');
